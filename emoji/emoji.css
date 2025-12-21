@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background: yellow;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  background: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+}
+
+span.star{
+  font-size: 2.1rem;
+}
+
+
+.emoji-con{
+  height: 40px;
+  width: 40px;
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  
+  svg{
+    display: block;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    transform: translateX(0);
+    transition: transform .25s;
+  }
+  
+  svg:nth-of-type(1){
+    fill: red;
+  }
+  svg:nth-of-type(2){
+    fill: rgb(255, 72, 0);
+  }
+  svg:nth-of-type(3){
+    fill: orange;
+  }
+  svg:nth-of-type(4){
+    fill: lightgreen;
+  }
+  svg:nth-of-type(5){
+    fill: green;
+  }
+  
+}
+
+.star-con{
+  .star{
+    display: inline-block;
+    filter: grayscale(1);
+    cursor: pointer;
+    transition: all .25s;
+    
+    &:hover{
+      transform: scale(.95);
+    }
+  }
+  
+  .star.select{
+    filter: grayscale(0);
+  }
+}
+
+.status{
+  font-size: 1.25rem;
+  display: none;
+}
+
+.thank{
+  font-size: 1.5rem;
+  color: green;
+  width: 70%;
+  line-height: 1.5;
+  text-align: center;
+  display: none;
+}
+
+.show{
+  display: block;
+}
