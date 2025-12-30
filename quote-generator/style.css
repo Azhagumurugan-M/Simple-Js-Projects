@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: url('images/main-bg.jpg') 100% no-repeat;
+  background-size:cover;
+  display: grid;
+  grid-template-columns: 1fr calc(1200px - 80px) 1fr;
+  align-items: center;
+  
+  > *{
+    grid-column: 2;
+  }
+  
+  @media (width < calc(1100/16*1rem)){
+    grid-template-columns: 1fr calc(100% - 80px) 1fr;
+  }
+  
+  @media (width < calc(700/16*1rem)){
+    grid-template-columns: 24px 1fr 24px;
+  }
+}
+
+.quote-con{
+  background: rgba(255,255,255,.5);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.3);
+  justify-self: center;
+}
+
+.fa-solid{
+  font-size: 3rem;
+  margin-left: 2px;
+}
+
+.quote{
+  /* display: inline-block; */
+  font-size: 2.5rem;
+  max-width: 30ch;
+  text-align: center;
+  
+  @media (width < calc(700/16*1rem)){
+    font-size: 2rem;
+  }
+}
+
+.author{
+  font-size: 1.25rem;
+  display: block;
+  text-align: center;
+  margin-block: 20px;
+}
+
+.icons-con{
+  display: flex;
+  justify-content: space-between;
+  
+  a{
+    color: #222;
+  }
+  
+  .fa-brands{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all .3s;
+    
+    &:hover{
+      transform: scale(.95);
+    }
+  }
+  
+  .btn{
+    padding: 12px 24px;
+    font-weight: 600;
+    color: #ddd;
+    background: #222;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all .3s;
+    
+    &:hover{
+      background: #444;
+      transform: scale(.95);
+    }
+  }
+}
+
+.loader{
+  justify-self: center;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #333;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
